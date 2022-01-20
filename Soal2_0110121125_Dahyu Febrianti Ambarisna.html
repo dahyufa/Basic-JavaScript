@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kurs Rupiah</title>
+	<script>
+        function kurs(){
+	    var k = document.getElementById("kurs").value;
+	    if (k == 1){
+		var input = document.getElementById("nilai").value;
+		var nilai = 14650;
+		var hitung = nilai * input;
+		document.getElementById("rupiah").value = "Rp. " + hitung;
+	    }
+        else if (k < 1){
+		document.getElementById("rupiah").value = "0";
+	    }
+        }
+    </script>
+</head>
+
+<body>
+	<div>
+	    <div>
+  		    <div >
+    		    <h2>Menghitung Kurs Rupiah</h2>
+  		    </div>
+	    </div>
+	    <br>
+	    <input onkeyup="kurs()" type="text" id="nilai" name="nilai" placeholder="Nilai ">
+ 	    <br>
+	    <select onchange="kurs()" name="kurs" id="kurs">
+	       <option value="0">Kurs Rupiah</option>
+	       <option value="1"> Dollar  </option>
+	    </select>
+	    <br>
+	    <input type="text" disabled="" id="rupiah" name="rupiah" placeholder="Nilai Rupiah ">
+	</div>
+</body>
+</html>
